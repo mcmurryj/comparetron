@@ -1,16 +1,3 @@
-## Get_BBH
-
-#### Description
-Get_BBH is a tool for retrieving Best Bilateral BLAST hits (BBHs) between two fasta databases.
-
-#### Usage
-*get_BBH -db1 your_first_faa_file.faa -db2 your_2nd_FAA_file.faa -out /some/path/youroutputdir --evalue 1E-50*
-
-#### Arguments
-
-#### Output
-
-
 ## comparetron
 
 #### Description
@@ -20,13 +7,17 @@ The comparetron is a special-purpose tool for the comparison of multiple microbi
 #### Usage
 *comparetron -ingroup_folder -outgroup_folder*
 
-#### Arguments
+#### Input
+*ingroup_folder* is a folder containing genbank files corresponding to organisms that possess the phenotype of interest.  
+
+*outgroup_folder* is a folder containing genbank files corresponding to related organisms that do not possess the phenotype.
 
 #### Output
-
-Right now, prints the IDs of best bilateral BLAST hit pairs.  Pretty messy.  
 
 #### Example
 
 ### TODO:
-- Finish the get_homologues script, which will retrieve sequences with the same best hit from 2x reference sets.  For assembling MSA of large complex type stuff.
+- Decide how to handle genes occurring on different contigs.
+- Finish plotting function.
+- Put together test dataset.
+- Switch to DIAMOND for performance?
