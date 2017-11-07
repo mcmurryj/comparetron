@@ -1,0 +1,38 @@
+### IMPORT LIBRARIES ###
+
+### GET PARAMETERS ###
+
+### IF INPUT IS GB FILE, UNPACK TO FASTA; OTHERWISE ADD INDEX  ###
+For synteny analysis it will be necessary to have some sort of index value in the FASTA header.
+Also, for separate contigs, it will be necessary to do SOMETHING to the index to avoid cross-contig artifacts.
+
+### MAKE BLAST/DIAMOND INDICES ###
+
+### RUN BLAST/DIAMOND SEARCHES ###
+
+### PARSE BLAST/DIAMOND RESULTS TO OBTAIN BEST BILATERAL HITS WITH BIT SCORES ###
+
+### RE-PARSE RESULTS TO OBTAIN SYNTENY SCORES ###
+Options for synteny assessment:
+1) geometric distance
+based on nucleotide positions.  Count # of BBH within X units on a 2D plot.
+For genome in genomes:
+   make dataframe: reference ID, x, y, contig
+   For hit in hits:
+      x is the position of the reference protein (average start/stop position)
+      y is the position of the hit
+   For point in the dataframe:
+      count the # of other points within 20,000 arbitrary units and the same contig.
+      record that number in the hit_dict
+
+2) Adjacency
+Make network.  For protein with BBH, make node.  If index of BBH is within 2 of index of previous 2 BBH-es, add edge
+
+### PRINT RESULT TABLES ###
+Verbose or regular.
+
+### INTERACTIVE RESULTS ###
+Plot ingroup genome #1 on X axis, ingroup genome #2 on Y axis, color points to indicate homology scores.
+Show protein ID and annotation with mouseover.
+
+### UNRESOLVED ###
